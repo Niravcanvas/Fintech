@@ -357,4 +357,4 @@ For issues and questions, please [open an issue](https://github.com/yourusername
 
 ---
 
-**Made with ❤️ and ☕ by [Your Name]**
+Made by Kiran and Nirav
