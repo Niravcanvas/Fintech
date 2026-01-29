@@ -2,129 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-body {
-  background-color: #0F0F0F;
-  color: #FFFFFF;
-  overflow-x: hidden;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
-/* Custom Scrollbar */
+/* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
-}
-
-/* Scrollbar for specific elements */
-.scrollbar-thin::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Remove number input arrows */
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-
-/* Focus visible styles */
-*:focus-visible {
-  outline: 2px solid #BA18BA;
-  outline-offset: 2px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slide-in {
-  animation: slideInRight 0.4s ease-out;
-}
-
-/* Glass effect utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.glass-hover:hover {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 30px rgba(186, 24, 186, 0.3);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #6B076B 0%, #BA18BA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Mobile responsive padding for bottom nav */
-@media (max-width: 1024px) {
-  main {
-    padding-bottom: 80px;
-  }
 }
